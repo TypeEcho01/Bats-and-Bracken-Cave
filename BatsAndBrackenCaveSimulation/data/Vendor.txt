@@ -1,0 +1,3 @@
+﻿new Vendor
+	name = Bob # Placeholder name
+end

@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="Library.Core">
+      <HintPath>..\..\..\..\OneDrive - Columbia College Chicago\Classes\3 Programming II\LibrarySolution\Library.Core\bin\Debug\net8.0\Library.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Library.WPFApp">
+      <HintPath>..\..\..\..\OneDrive - Columbia College Chicago\Classes\3 Programming II\LibrarySolution\Library.WPFApp\bin\Debug\net8.0-windows\Library.WPFApp.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,12 @@
+﻿new Environment
+	farmers = 50
+	tourists = 50
+	bats = 1500
+	hawks = 40
+	cornEarworms = 500
+	cottonBollworms = 500
+	corn = 1000
+	cotton = 1000
+	dermestidBeetles = 120
+	guanoBeetles = 120
+end
