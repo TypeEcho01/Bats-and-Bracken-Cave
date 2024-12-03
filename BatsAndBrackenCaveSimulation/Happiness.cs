@@ -8,13 +8,13 @@ namespace BatsAndBrackenCaveSimulation
     public enum Happiness
     {
         TremendouslyUnhappy,
-        ConsiderableUnhappy,
+        ConsiderablyUnhappy,
         ModeratelyUnhappy,
         SlightlyUnhappy,
         Neutral,
         SlightlyHappy,
         ModeratelyHappy,
-        ConsiderableHappy,
+        ConsiderablyHappy,
         TremendouslyHappy
     }
 }

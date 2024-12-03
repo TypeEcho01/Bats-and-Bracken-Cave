@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace BatsAndBrackenCaveSimulation
 {
-    public interface IOrganism
-    { }
+    internal interface IUsable
+    {
+        void Use(Environment environment, out string message);
+    }
 }

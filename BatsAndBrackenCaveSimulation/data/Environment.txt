@@ -1,7 +1,7 @@
 ﻿new Environment
-	farmers = 50
+	farmers = 5 # unused
 	tourists = 50
-	bats = 1500
+	bats = 1000
 	hawks = 40
 	cornEarworms = 500
 	cottonBollworms = 500

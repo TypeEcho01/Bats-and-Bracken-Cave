@@ -1,11 +1,12 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
 namespace BatsAndBrackenCaveSimulation
 {
-    public class Inventory
+    public class Inventory : IEnumerable<Slot>
     {
         private readonly List<Slot> _slots;
 
@@ -24,8 +25,17 @@ namespace BatsAndBrackenCaveSimulation
         public void Add(Slot slot) =>
             _slots.Add(slot);
 
-        public Slot Get(Index index) =>
-            _slots[index];
+        public Slot Get(int index)
+        {
+            try
+            {
+                return _slots[index];
+            }
+            catch (Exception)
+            {
+                return Slot.Empty;
+            }
+        }
 
         public Slot Get(string itemName)
         {
@@ -49,5 +59,15 @@ namespace BatsAndBrackenCaveSimulation
 
         public override string ToString() =>
             string.Join('\n', _slots);
+
+        public IEnumerator<Slot> GetEnumerator()
+        {
+            return ((IEnumerable<Slot>)_slots).GetEnumerator();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return ((IEnumerable)_slots).GetEnumerator();
+        }
     }
 }

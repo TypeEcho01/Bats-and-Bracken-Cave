@@ -13,6 +13,7 @@ namespace BatsAndBrackenCaveSimulation
         public readonly Environment Environment;
         public uint Day = 0;
 
+
         public Game()
         {
             DataObject environmentData = Data.Load("Environment");
@@ -34,7 +35,6 @@ namespace BatsAndBrackenCaveSimulation
 
             Player = new(
                 playerData.Get<string>("name"),
-                null,
                 playerData.Get<uint>("currency"),
                 playerData.Get<uint>("teamMemberCount"),
                 Happiness.Neutral
@@ -43,9 +43,12 @@ namespace BatsAndBrackenCaveSimulation
             DataObject vendorData = Data.Load("Vendor");
 
             Vendor = new(
-                vendorData.Get<string>("name"),
-                null
+                vendorData.Get<string>("name")
             );
+
+            Vendor.Inventory.Add(new Slot(new MealwormBag(), 1));
+            Vendor.Inventory.Add(new Slot(new PestSpray(), 1));
+            Vendor.Inventory.Add(new Slot(new Fertilizer(), 1));
         }
 
         public void NextDay()

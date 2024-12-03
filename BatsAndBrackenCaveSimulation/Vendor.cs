@@ -3,20 +3,29 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+using static Library.Core.Methods;
+
 namespace BatsAndBrackenCaveSimulation
 {
     public class Vendor : Human
     {
         public string Info => ToString();
 
-        public Vendor(string name = "Anonymous Vendor", Inventory? inventory = null) : base(name)
+        public Vendor(string name = "Anonymous Vendor") : base(name)
         {
-            if (inventory is not null)
-                Inventory = inventory;
+            Inventory = new Inventory();
         }
 
-        public override string ToString() =>
-            $"Vendor {Name}\n" +
-            (Inventory.Length > 0 ? $"Inventory:\n{Inventory}" : "Empty Inventory");
+        public override string ToString()
+        {
+            StringBuilder sb = new();
+
+            foreach (var (index, slot) in Enumerate(Inventory, start: 1))
+                sb.AppendLine($"{index}) {slot} (Cost: ${slot.Item.Value})");
+
+            return 
+                $"Vendor {Name}\n" +
+                (Inventory.Length > 0 ? $"Inventory:\n{sb}" : "Empty Inventory");
+        }
     }
 }

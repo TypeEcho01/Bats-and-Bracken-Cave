@@ -69,9 +69,9 @@ namespace BatsAndBrackenCaveSimulation
         public void Subtract(uint amount)
         {
             if (Count < amount)
-                throw new SlotException($"{nameof(Subtract)} cannot subtract {amount} from Count, as Count is {Count} and cannot be negative.");
-
-            Count -= amount;
+                Count = 0;
+            else
+                Count -= amount;
         }
 
         public void Transfer(Pack<T> other, uint amount)

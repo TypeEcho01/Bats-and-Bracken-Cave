@@ -1,5 +1,5 @@
 ﻿new Player
 	name = Player # Placeholder name
-	currency = 100
-	teamMemberCount = 20
+	currency = 5000
+	teamMemberCount = 10
 end

@@ -5,15 +5,33 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BatsAndBrackenCaveSimulation"
         mc:Ignorable="d"
-        Title="Bats and Bracken Cave Simulation by Echo" Height="450" Width="800">
+        Title="Bats and Bracken Cave Simulation by Echo" Height="450" Width="1000">
     <Grid Loaded="Grid_Loaded">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="51*"/>
+            <ColumnDefinition Width="149*"/>
+        </Grid.ColumnDefinitions>
         <TextBlock x:Name="DayTextBlock" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Day 0" VerticalAlignment="Top"/>
-        <TextBlock x:Name="TimeTextBlock" HorizontalAlignment="Left" Margin="10,31,0,0" TextWrapping="Wrap" Text="Time" VerticalAlignment="Top"/>
+        <TextBlock x:Name="TimeTextBlock" HorizontalAlignment="Left" Margin="10,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
         <Button x:Name="NextDayButton" Content="Next Day" HorizontalAlignment="Left" Margin="60,10,0,0" VerticalAlignment="Top" Click="NextDayButton_Click"/>
-        <TextBlock x:Name="EnvironmentInfoTextBlock" HorizontalAlignment="Left" Margin="10,240,0,0" TextWrapping="Wrap" Text="{Binding Path=Info}" VerticalAlignment="Top" Width="250" Height="184"/>
-        <TextBlock x:Name="VendorInfoTextBlock" HorizontalAlignment="Left" Margin="519,220,0,0" TextWrapping="Wrap" Text="{Binding Path=Info}" VerticalAlignment="Top" Width="250" Height="179" TextAlignment="Right"/>
-        <TextBox x:Name="BuyTextBox" HorizontalAlignment="Left" Margin="519,404,0,0" TextWrapping="Wrap" Text="&#xD;&#xA;" VerticalAlignment="Top" Width="226" Height="20"/>
-        <Button x:Name="BuyButton" Content="Buy" HorizontalAlignment="Left" Margin="745,404,0,0" VerticalAlignment="Top" Click="BuyButton_Click" RenderTransformOrigin="0.177,0.69" Width="24"/>
-        <TextBlock x:Name="PlayerInfoTextBlock" HorizontalAlignment="Left" Margin="519,10,0,0" TextWrapping="Wrap" Text="{Binding Info}" VerticalAlignment="Top" Width="250" Height="205" TextAlignment="Right"/>
+        <TextBlock x:Name="EnvironmentInfoTextBlock" HorizontalAlignment="Left" Margin="10,240,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="250" Height="184" Grid.ColumnSpan="2"/>
+        <TextBlock x:Name="VendorInfoTextBlock" HorizontalAlignment="Left" Margin="476,240,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="250" Height="149" TextAlignment="Right" Grid.Column="1"/>
+        <TextBox x:Name="ItemNumberTextBox" HorizontalAlignment="Left" Margin="562,389,0,0" TextWrapping="Wrap" Text="&#xD;&#xA;" VerticalAlignment="Top" Width="26" Height="20" RenderTransformOrigin="-0.5,0.502" Grid.Column="1"/>
+        <Button x:Name="BuyButton" Content="Buy" HorizontalAlignment="Left" Margin="689,389,0,0" VerticalAlignment="Top" Click="BuyButton_Click" RenderTransformOrigin="0.177,0.69" Width="37" Grid.Column="1"/>
+        <TextBlock x:Name="PlayerInfoTextBlock" HorizontalAlignment="Left" Margin="476,8,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="250" Height="136" TextAlignment="Right" Grid.Column="1"/>
+        <TextBlock x:Name="LogTextBlock" HorizontalAlignment="Left" Margin="16,42,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="458" Height="366" Background="Black" Foreground="White" Grid.Column="1"/>
+        <TextBlock x:Name="LogNameTextBlock" HorizontalAlignment="Left" Margin="16,18,0,0" TextWrapping="Wrap" Text="Log:" VerticalAlignment="Top" Width="458" Height="24" Grid.Column="1"/>
+        <TextBlock x:Name="ItemNumberTextBlock" HorizontalAlignment="Left" Margin="523,389,0,0" TextWrapping="Wrap" Text="Item #:" VerticalAlignment="Top" Width="39" Height="22" RenderTransformOrigin="0.59,1.002" Grid.Column="1"/>
+        <TextBox x:Name="AmountToBuyTextBox" HorizontalAlignment="Left" Margin="644,390,0,0" TextWrapping="Wrap" Text="&#xA;" VerticalAlignment="Top" Width="40" Height="20" RenderTransformOrigin="0.929,0.534" Grid.Column="1"/>
+        <TextBlock x:Name="AmountToBuyTextBlock" HorizontalAlignment="Left" Margin="595,390,0,0" TextWrapping="Wrap" Text="Amount:" VerticalAlignment="Top" Width="49" Height="22" Grid.Column="1"/>
+        <Button x:Name="ClearButton" Content="Clear" HorizontalAlignment="Left" Margin="479,388,0,0" VerticalAlignment="Top" Click="ClearButton_Click" RenderTransformOrigin="0.177,0.69" Width="39" Grid.Column="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,72,0,0" TextWrapping="Wrap" Text="Tourist Price:" VerticalAlignment="Top"/>
+        <TextBlock x:Name="TouristTextBlock" HorizontalAlignment="Left" Margin="82,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="49" RenderTransformOrigin="0.367,0.566"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,95,0,0" TextWrapping="Wrap" Text="New Price: $" VerticalAlignment="Top" Width="67"/>
+        <TextBox x:Name="TouristPriceTextBox" HorizontalAlignment="Left" Margin="77,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="54"/>
+        <Button x:Name="SetPriceButton" Content="Set" HorizontalAlignment="Left" Height="18" Margin="136,95,0,0" VerticalAlignment="Top" Width="39" Click="SetPriceButton_Click"/>
+        <TextBox x:Name="UseItemNumberTextBox" HorizontalAlignment="Left" Margin="658,148,0,0" TextWrapping="Wrap" Text="&#xA;" VerticalAlignment="Top" Width="26" Height="20" RenderTransformOrigin="-0.5,0.502" Grid.Column="1"/>
+        <TextBlock x:Name="UseItemNumberTextBlock" HorizontalAlignment="Left" Margin="615,149,0,0" TextWrapping="Wrap" Text="Item #:" VerticalAlignment="Top" Width="38" Height="22" RenderTransformOrigin="0.59,1.002" Grid.Column="1"/>
+        <Button x:Name="UseButton" Content="Use" HorizontalAlignment="Left" Margin="689,149,0,0" VerticalAlignment="Top" Click="UseButton_Click" RenderTransformOrigin="0.177,0.69" Width="37" Grid.Column="1"/>
     </Grid>
 </Window>
